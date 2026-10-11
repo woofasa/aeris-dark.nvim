@@ -1,17 +1,60 @@
 local M = {}
 
-function M.set(aeris)
+-- Список модулей групп. Порядок не важен: дубли — ошибка (см. M.set).
+local modules = {
+  "aeris.groups.editor",
+  "aeris.groups.syntax",
+  "aeris.groups.treesitter",
+  "aeris.groups.lsp",
+  "aeris.groups.snacks",
+  "aeris.groups.neotree",
+  "aeris.groups.plugins",
+}
+
+-- Группы, у которых фон становится прозрачным при transparent = true.
+local transparent_groups = {
+  "Normal",
+  "NormalNC",
+  "SignColumn",
+  "EndOfBuffer",
+  "FoldColumn",
+  "TabLineFill",
+  "NeoTreeNormal",
+  "NeoTreeNormalNC",
+  "NeoTreeEndOfBuffer",
+}
+
+---@param aeris table palette
+---@param config table {transparent: boolean, overrides: table<string, table>}
+function M.set(aeris, config)
   local groups = {}
 
-  groups = vim.tbl_extend("force", groups, require("aeris.groups.syntax").load(aeris))
-  groups = vim.tbl_extend("force", groups, require("aeris.groups.editor").load(aeris))
-  groups = vim.tbl_extend("force", groups, require("aeris.groups.treesitter").load(aeris))
-  groups = vim.tbl_extend("force", groups, require("aeris.groups.snacks").load(aeris))
-  groups = vim.tbl_extend("force", groups, require("aeris.groups.neotree").load(aeris))
-  groups = vim.tbl_extend("force", groups, require("aeris.groups.lsp").load(aeris))
-  for group, opts in pairs(groups) do
-    vim.api.nvim_set_hl(0, group, opts)
+  for _, name in ipairs(modules) do
+    for group, spec in pairs(require(name).load(aeris)) do
+      if groups[group] then
+        error(("aeris: highlight group '%s' defined twice (last in %s)"):format(group, name))
+      end
+      groups[group] = spec
+    end
   end
+
+  for group, spec in pairs(config.overrides) do
+    groups[group] = vim.tbl_extend("force", groups[group] or {}, spec)
+  end
+
+  if config.transparent then
+    for _, group in ipairs(transparent_groups) do
+      if groups[group] then
+        groups[group].bg = "NONE"
+      end
+    end
+  end
+
+  for group, spec in pairs(groups) do
+    vim.api.nvim_set_hl(0, group, spec)
+  end
+
+  require("aeris.groups.terminal").load(aeris)
 end
 
 return M
