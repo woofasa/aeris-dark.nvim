@@ -8,6 +8,9 @@ editor.load = function(aeris)
     NormalFloat   = { fg = aeris.fg, bg = aeris.bg_overlay },
     FloatBorder   = { fg = aeris.fg_subtle, bg = aeris.bg_overlay },
     FloatTitle    = { fg = aeris.aqua, bg = aeris.bg_overlay },
+    FloatShadow   = { bg = aeris.bg, blend = 80 },
+    FloatShadowThrough = { bg = aeris.bg, blend = 100 },
+    Terminal      = { fg = aeris.fg, bg = aeris.bg },
 
     -- Курсор и выделение
     Cursor        = { fg = aeris.bg, bg = aeris.fg },
@@ -15,19 +18,22 @@ editor.load = function(aeris)
     CursorLine    = { bg = aeris.bg_raised },
     CursorColumn  = { bg = aeris.bg_raised },
     CursorLineNr  = { fg = aeris.peach },
-    Visual        = { bg = aeris.fg_subtle },
-    VisualNOS     = { bg = aeris.bg_overlay },
+    CursorLineSign = { bg = aeris.bg_raised },
+    CursorLineFold = { bg = aeris.bg_raised },
+    Visual        = { bg = aeris.bg_active },
+    VisualNOS     = { bg = aeris.bg_active },
 
     -- Номера строк и колонки
     LineNr        = { fg = aeris.fg_muted },
-    SignColumn    = { fg = aeris.fg_ghost, bg = aeris.bg },
+    SignColumn    = { fg = aeris.fg_subtle, bg = aeris.bg },
     FoldColumn    = { fg = aeris.fg_subtle, bg = aeris.bg },
     ColorColumn   = { bg = aeris.bg_raised },
 
     -- Разделители
-    VertSplit     = { fg = aeris.bg_border },
-    WinSeparator  = { fg = aeris.bg_border },
+    VertSplit     = { fg = aeris.fg_subtle },
+    WinSeparator  = { fg = aeris.fg_subtle },
     EndOfBuffer   = { fg = aeris.bg },
+    -- Декоративные символы: допустимо низкий контраст
     NonText       = { fg = aeris.fg_ghost },
     SpecialKey    = { fg = aeris.fg_ghost },
     Whitespace    = { fg = aeris.fg_ghost },
@@ -44,21 +50,24 @@ editor.load = function(aeris)
     PmenuSbar     = { bg = aeris.bg_overlay },
     PmenuThumb    = { bg = aeris.fg_subtle },
 
-    -- Строка статуса
+    -- Строка статуса, вкладки, winbar
     StatusLine    = { fg = aeris.fg, bg = aeris.bg_subtle },
     StatusLineNC  = { fg = aeris.fg_muted, bg = aeris.bg_subtle },
     TabLine       = { fg = aeris.fg_muted, bg = aeris.bg_subtle },
     TabLineSel    = { fg = aeris.bg, bg = aeris.aqua },
     TabLineFill   = { bg = aeris.bg },
+    WinBar        = { fg = aeris.fg, bg = aeris.bg },
+    WinBarNC      = { fg = aeris.fg_muted, bg = aeris.bg },
 
     -- Сворачивание
     Folded        = { fg = aeris.fg_muted, bg = aeris.bg_raised },
 
     -- Сообщения
     ErrorMsg      = { fg = aeris.red },
-    WarningMsg    = { fg = aeris.peach },
+    WarningMsg    = { fg = aeris.orange },
     MoreMsg       = { fg = aeris.aqua },
     ModeMsg       = { fg = aeris.fg_muted },
+    MsgArea       = { fg = aeris.fg, bg = aeris.bg },
     Question      = { fg = aeris.aqua },
     Title         = { fg = aeris.aqua, bold = true },
     WildMenu      = { fg = aeris.bg, bg = aeris.aqua },
@@ -73,7 +82,7 @@ editor.load = function(aeris)
     MatchParen    = { fg = aeris.fg, bold = true },
     Directory     = { fg = aeris.aqua },
     QuickFixLine  = { bg = aeris.bg_overlay },
-    Conceal       = { fg = aeris.fg_ghost },
+    Conceal       = { fg = aeris.fg_subtle },
 
     -- Spell
     SpellBad      = { sp = aeris.red, undercurl = true },
@@ -84,7 +93,7 @@ editor.load = function(aeris)
     -- Health
     healthError   = { fg = aeris.red },
     healthSuccess = { fg = aeris.green },
-    healthWarning = { fg = aeris.peach },
+    healthWarning = { fg = aeris.orange },
   }
 end
 
