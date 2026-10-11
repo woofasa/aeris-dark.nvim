@@ -1,8 +1,8 @@
 # aeris.nvim
 
-Тёмная цветовая схема для Neovim с палитрой из пастельных акцентов на почти чёрном фоне.
+A dark colorscheme for Neovim with a palette of pastel accents on a near-black background.
 
-## Установка (lazy.nvim)
+## Installation (lazy.nvim)
 
 ```lua
 {
@@ -16,59 +16,59 @@
 }
 ```
 
-Затем:
+Then:
 
 ```vim
 :colorscheme aeris
 ```
 
-## Опции
+## Options
 
-`require("aeris").setup(opts)` вызывается до `:colorscheme aeris`
-(lazy.nvim делает это автоматически через `opts`).
+`require("aeris").setup(opts)` is called before `:colorscheme aeris`
+(lazy.nvim does this automatically via `opts`).
 
-| Опция         | Тип                       | По умолчанию | Описание |
-|---------------|---------------------------|--------------|----------|
-| `transparent` | `boolean`                 | `false`      | Убирает фон у `Normal`, `NormalNC`, `SignColumn`, `EndOfBuffer`, `FoldColumn`, `TabLineFill` и панелей neo-tree. |
-| `overrides`   | `table<string, table>`    | `{}`         | Переопределения групп поверх схемы, аргументы как у `nvim_set_hl`. Пример: `{ Comment = { italic = true } }`. |
+| Option        | Type                      | Default      | Description |
+|---------------|---------------------------|--------------|-------------|
+| `transparent` | `boolean`                 | `false`      | Removes the background from `Normal`, `NormalNC`, `SignColumn`, `EndOfBuffer`, `FoldColumn`, `TabLineFill` and neo-tree panels. |
+| `overrides`   | `table<string, table>`    | `{}`         | Overrides for groups on top of the scheme, arguments are the same as for `nvim_set_hl`. Example: `{ Comment = { italic = true } }`. |
 
-## Плагины
+## Plugins
 
-Подсветка есть для: treesitter, LSP (диагностика, inlay hints, references),
+Highlighting is available for: treesitter, LSP (diagnostics, inlay hints, references),
 snacks.nvim, neo-tree, gitsigns, blink.cmp, which-key, flash.nvim.
 
-Тема lualine:
+lualine theme:
 
 ```lua
 require("lualine").setup({ options = { theme = "aeris" } })
 ```
 
-bufferline не имеет собственных групп: он вычисляет цвета из стандартных групп схемы.
+bufferline has no groups of its own: it computes its colors from the scheme's standard groups.
 
-## Терминал
+## Terminal
 
-`g:terminal_color_0..15` выставляются из палитры. В палитре нет отдельных
-ярких оттенков: слоты 9–14 совпадают с обычными, отличаются только 8 и 15.
+`g:terminal_color_0..15` are set from the palette. The palette has no separate
+bright shades: slots 9–14 match the normal ones, only 8 and 15 differ.
 
-## Палитра
+## Palette
 
-Цвета в `lua/aeris/palette.lua`. Роли:
+Colors are defined in `lua/aeris/palette.lua`. Roles:
 
-- `fg_muted` — комментарии и второстепенный текст (≈4.6:1 к фону);
-- `fg_subtle` — вторичный текст, разделители, inlay hints (≈3.1:1);
-- `fg_ghost` — только декор (whitespace, nontext, indent). Для текста не использовать.
+- `fg_muted` — comments and secondary text (≈4.6:1 against the background);
+- `fg_subtle` — secondary text, separators, inlay hints (≈3.1:1);
+- `fg_ghost` — decoration only (whitespace, nontext, indent). Do not use for text.
 
-## Разработка
+## Development
 
-Проверки без UI:
+Checks without UI:
 
 ```sh
 nvim --headless -u NONE -l tests/check.lua
 ```
 
-Скрипт проверяет загрузку, терминальную палитру, контраст ключевых групп,
-ошибку на дубли групп, валидацию `setup()`, `transparent` и `overrides`.
+The script checks loading, the terminal palette, contrast of key groups,
+an error on duplicate groups, `setup()` validation, `transparent` and `overrides`.
 
-## Лицензия
+## License
 
-См. [LICENSE.txt](LICENSE.txt).
+See [LICENSE.txt](LICENSE.txt).
