@@ -12,7 +12,7 @@ snacks.load = function(aeris)
 
     SnacksPickerDir          = { fg = aeris.fg },
     SnacksPickerFile         = { fg = aeris.fg },
-    SnacksPickerBorder       = { fg = aeris.bg_border },
+    SnacksPickerBorder       = { fg = aeris.fg_subtle },
     SnacksPickerTitle        = { fg = aeris.aqua, bold = true },
     SnacksPickerMatch        = { fg = aeris.pink, bold = true },
     SnacksPickerSelected     = { fg = aeris.aqua },
