@@ -4,8 +4,9 @@ syntax.load = function(aeris)
   return {
     Comment        = { fg = aeris.fg_muted },
     SpecialComment = { fg = aeris.blue },
-    Todo           = { fg = aeris.peach, bold = true },
+    Todo           = { fg = aeris.orange, bold = true },
 
+    -- Ключевые слова: pink. Препроцессор/импорты: blue, чтобы не сливались.
     Keyword        = { fg = aeris.pink },
     Conditional    = { fg = aeris.pink },
     Repeat         = { fg = aeris.pink },
@@ -13,11 +14,11 @@ syntax.load = function(aeris)
     Exception      = { fg = aeris.pink },
     Statement      = { fg = aeris.pink },
     StorageClass   = { fg = aeris.pink },
-    Include        = { fg = aeris.pink },
-    PreProc        = { fg = aeris.pink },
-    Define         = { fg = aeris.pink },
-    Macro          = { fg = aeris.pink },
-    PreCondit      = { fg = aeris.pink },
+    Include        = { fg = aeris.blue },
+    PreProc        = { fg = aeris.blue },
+    Define         = { fg = aeris.blue },
+    Macro          = { fg = aeris.blue },
+    PreCondit      = { fg = aeris.blue },
 
     Function       = { fg = aeris.aqua },
 
@@ -27,6 +28,7 @@ syntax.load = function(aeris)
 
     Identifier     = { fg = aeris.fg },
 
+    -- Литералы: peach. Предупреждения используют отдельный orange.
     String         = { fg = aeris.peach },
     Character      = { fg = aeris.peach },
     Number         = { fg = aeris.peach },
@@ -43,8 +45,7 @@ syntax.load = function(aeris)
     Debug          = { fg = aeris.red },
     Error          = { fg = aeris.red, bold = true },
     Underlined     = { underline = true },
-    Ignore         = { fg = aeris.fg_ghost },
-    Conceal        = { fg = aeris.fg_ghost },
+    Ignore         = { fg = aeris.fg_subtle },
   }
 end
 
