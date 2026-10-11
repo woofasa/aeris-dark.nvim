@@ -6,7 +6,7 @@ A dark colorscheme for Neovim with a palette of pastel accents on a near-black b
 
 ```lua
 {
-  "woofasa/aeris-nvim",
+  "woofasa/aeris-dark.nvim",
   name = "aeris",
   priority = 1000,
   opts = {
