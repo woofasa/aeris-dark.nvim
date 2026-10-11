@@ -2,7 +2,7 @@ local M = {}
 
 local defaults = {
   -- Transparent background for Normal and side panels (the terminal background shows through).
-  transparent = false,
+  transparent = true,
   -- Group overrides applied on top of the theme: { Comment = { italic = true }, ... }.
   overrides = {},
 }

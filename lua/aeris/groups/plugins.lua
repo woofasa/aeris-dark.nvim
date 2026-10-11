@@ -10,14 +10,14 @@ plugins.load = function(aeris)
     GitSignsTopdelete       = { fg = aeris.red },
     GitSignsChangedelete    = { fg = aeris.orange },
     GitSignsUntracked       = { fg = aeris.fg_muted },
-    GitSignsCurrentLineBlame = { fg = aeris.fg_subtle, italic = true },
+    GitSignsCurrentLineBlame = { fg = aeris.fg_subtle },
 
     -- blink.cmp
     BlinkCmpMenu                        = { fg = aeris.fg, bg = aeris.bg_overlay },
     BlinkCmpMenuBorder                  = { fg = aeris.fg_subtle, bg = aeris.bg_overlay },
     BlinkCmpMenuSelection               = { bg = aeris.bg_active },
     BlinkCmpLabel                       = { fg = aeris.fg },
-    BlinkCmpLabelMatch                  = { fg = aeris.aqua, bold = true },
+    BlinkCmpLabelMatch                  = { fg = aeris.aqua },
     BlinkCmpLabelDeprecated             = { fg = aeris.fg_muted, strikethrough = true },
     BlinkCmpLabelDetail                 = { fg = aeris.fg_muted },
     BlinkCmpLabelDescription            = { fg = aeris.fg_muted },
@@ -29,7 +29,7 @@ plugins.load = function(aeris)
     BlinkCmpDocSeparator                = { fg = aeris.fg_subtle, bg = aeris.bg_overlay },
     BlinkCmpSignatureHelp               = { fg = aeris.fg, bg = aeris.bg_overlay },
     BlinkCmpSignatureHelpBorder         = { fg = aeris.fg_subtle, bg = aeris.bg_overlay },
-    BlinkCmpSignatureHelpActiveParameter = { fg = aeris.aqua, bold = true },
+    BlinkCmpSignatureHelpActiveParameter = { fg = aeris.aqua },
     BlinkCmpScrollBarGutter             = { bg = aeris.bg_overlay },
     BlinkCmpScrollBarThumb              = { bg = aeris.fg_subtle },
 
@@ -41,11 +41,11 @@ plugins.load = function(aeris)
     WhichKeyValue   = { fg = aeris.fg_muted },
     WhichKeyNormal  = { fg = aeris.fg, bg = aeris.bg_overlay },
     WhichKeyBorder  = { fg = aeris.fg_subtle, bg = aeris.bg_overlay },
-    WhichKeyTitle   = { fg = aeris.aqua, bg = aeris.bg_overlay, bold = true },
+    WhichKeyTitle   = { fg = aeris.aqua, bg = aeris.bg_overlay },
 
     -- flash.nvim
-    FlashLabel      = { fg = aeris.bg, bg = aeris.orange, bold = true },
-    FlashCurrent    = { fg = aeris.bg, bg = aeris.pink, bold = true },
+    FlashLabel      = { fg = aeris.bg, bg = aeris.orange },
+    FlashCurrent    = { fg = aeris.bg, bg = aeris.pink },
     FlashMatch      = { fg = aeris.aqua, bg = aeris.bg_active },
     FlashBackdrop   = { fg = aeris.fg_subtle },
     FlashPromptIcon = { fg = aeris.pink },

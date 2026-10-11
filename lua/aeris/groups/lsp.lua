@@ -7,7 +7,7 @@ lsp.load = function(aeris)
     LspReferenceText           = { bg = aeris.bg_active },
     LspReferenceRead           = { bg = aeris.bg_active },
     LspReferenceWrite          = { bg = aeris.bg_active, underline = true },
-    LspSignatureActiveParameter = { bg = aeris.bg_active, bold = true },
+    LspSignatureActiveParameter = { bg = aeris.bg_active },
 
     DiagnosticVirtualTextError = { fg = aeris.red, bg = aeris.bg_raised },
     DiagnosticVirtualTextWarn  = { fg = aeris.orange, bg = aeris.bg_raised },

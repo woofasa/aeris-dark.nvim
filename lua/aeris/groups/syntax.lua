@@ -4,7 +4,7 @@ syntax.load = function(aeris)
   return {
     Comment        = { fg = aeris.fg_muted },
     SpecialComment = { fg = aeris.blue },
-    Todo           = { fg = aeris.orange, bold = true },
+    Todo           = { fg = aeris.orange },
 
     -- Keywords: pink. Preprocessor/imports: blue, so they don't blend together.
     Keyword        = { fg = aeris.pink },
@@ -40,10 +40,10 @@ syntax.load = function(aeris)
     Delimiter      = { fg = aeris.fg },
 
     Special        = { fg = aeris.green },
-    SpecialChar    = { fg = aeris.green },
+    SpecialChar    = { fg = aeris.peach },
     Tag            = { fg = aeris.aqua },
     Debug          = { fg = aeris.red },
-    Error          = { fg = aeris.red, bold = true },
+    Error          = { fg = aeris.red },
     Underlined     = { underline = true },
     Ignore         = { fg = aeris.fg_subtle },
   }

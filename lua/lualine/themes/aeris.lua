@@ -3,7 +3,7 @@ local p = require("aeris.palette")
 
 local function mode(a_bg)
   return {
-    a = { fg = p.bg, bg = a_bg, gui = "bold" },
+    a = { fg = p.bg, bg = a_bg },
     b = { fg = p.fg, bg = p.bg_active },
     c = { fg = p.fg_muted, bg = p.bg_subtle },
   }

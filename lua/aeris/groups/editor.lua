@@ -69,7 +69,7 @@ editor.load = function(aeris)
     ModeMsg       = { fg = aeris.fg_muted },
     MsgArea       = { fg = aeris.fg, bg = aeris.bg },
     Question      = { fg = aeris.aqua },
-    Title         = { fg = aeris.aqua, bold = true },
+    Title         = { fg = aeris.aqua },
     WildMenu      = { fg = aeris.bg, bg = aeris.aqua },
 
     -- Diff
@@ -79,7 +79,7 @@ editor.load = function(aeris)
     DiffText      = { fg = aeris.peach, bg = aeris.bg_raised },
 
     -- Miscellaneous
-    MatchParen    = { fg = aeris.fg, bold = true },
+    MatchParen    = { fg = aeris.fg },
     Directory     = { fg = aeris.aqua },
     QuickFixLine  = { bg = aeris.bg_overlay },
     Conceal       = { fg = aeris.fg_subtle },

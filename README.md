@@ -10,7 +10,7 @@ A dark colorscheme for Neovim with a palette of pastel accents on a near-black b
   name = "aeris",
   priority = 1000,
   opts = {
-    transparent = false,
+    transparent = true,
     overrides = {},
   },
 }
@@ -29,7 +29,7 @@ Then:
 
 | Option        | Type                      | Default      | Description |
 |---------------|---------------------------|--------------|-------------|
-| `transparent` | `boolean`                 | `false`      | Removes the background from `Normal`, `NormalNC`, `SignColumn`, `EndOfBuffer`, `FoldColumn`, `TabLineFill` and neo-tree panels. |
+| `transparent` | `boolean`                 | `true`       | Removes the background from `Normal`, `NormalNC`, `SignColumn`, `EndOfBuffer`, `FoldColumn`, `TabLineFill` and neo-tree panels. |
 | `overrides`   | `table<string, table>`    | `{}`         | Overrides for groups on top of the scheme, arguments are the same as for `nvim_set_hl`. Example: `{ Comment = { italic = true } }`. |
 
 ## Plugins
