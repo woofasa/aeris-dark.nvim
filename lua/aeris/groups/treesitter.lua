@@ -2,11 +2,11 @@ local treesitter = {}
 
 treesitter.load = function(aeris)
   return {
-    -- Комментарии
+    -- Comments
     ["@comment"]               = { fg = aeris.fg_muted },
 
-    -- Ключевые слова (подгруппы @keyword.conditional/repeat/exception
-    -- наследуют @keyword через fallback Neovim)
+    -- Keywords (subgroups @keyword.conditional/repeat/exception
+    -- inherit from @keyword via Neovim's fallback)
     ["@keyword"]               = { fg = aeris.pink },
     ["@keyword.function"]      = { fg = aeris.pink },
     ["@keyword.return"]        = { fg = aeris.pink },
@@ -15,7 +15,7 @@ treesitter.load = function(aeris)
     ["@keyword.type"]          = { fg = aeris.pink },
     ["@keyword.modifier"]      = { fg = aeris.pink },
 
-    -- Функции
+    -- Functions
     ["@function"]              = { fg = aeris.aqua },
     ["@function.builtin"]      = { fg = aeris.aqua },
     ["@function.macro"]        = { fg = aeris.blue },
@@ -24,11 +24,11 @@ treesitter.load = function(aeris)
     ["@function.method.call"]  = { fg = aeris.aqua },
     ["@constructor"]           = { fg = aeris.aqua },
 
-    -- Типы
+    -- Types
     ["@type"]                  = { fg = aeris.green },
     ["@type.builtin"]          = { fg = aeris.green },
 
-    -- Переменные и свойства
+    -- Variables and properties
     ["@variable"]              = { fg = aeris.fg },
     ["@variable.builtin"]      = { fg = aeris.pink },
     ["@variable.parameter"]    = { fg = aeris.fg },
@@ -36,7 +36,7 @@ treesitter.load = function(aeris)
     ["@property"]              = { fg = aeris.fg },
     ["@attribute"]             = { fg = aeris.blue },
 
-    -- Литералы
+    -- Literals
     ["@string"]                = { fg = aeris.peach },
     ["@string.escape"]         = { fg = aeris.green },
     ["@string.special"]        = { fg = aeris.green },
@@ -44,13 +44,13 @@ treesitter.load = function(aeris)
     ["@number.float"]          = { fg = aeris.peach },
     ["@boolean"]               = { fg = aeris.peach },
 
-    -- Операторы и пунктуация
+    -- Operators and punctuation
     ["@operator"]              = { fg = aeris.fg },
     ["@punctuation.bracket"]   = { fg = aeris.fg },
     ["@punctuation.delimiter"] = { fg = aeris.fg },
     ["@punctuation.special"]   = { fg = aeris.fg },
 
-    -- Прочее
+    -- Miscellaneous
     ["@constant"]              = { fg = aeris.peach },
     ["@constant.builtin"]      = { fg = aeris.peach },
     ["@namespace"]             = { fg = aeris.peach },
@@ -60,7 +60,7 @@ treesitter.load = function(aeris)
     ["@tag.attribute"]         = { fg = aeris.blue },
     ["@tag.delimiter"]         = { fg = aeris.fg_subtle },
 
-    -- Markup (markdown и т.п.)
+    -- Markup (markdown, etc.)
     ["@markup.heading"]        = { fg = aeris.pink, bold = true },
     ["@markup.strong"]         = { bold = true },
     ["@markup.italic"]         = { italic = true },
@@ -74,7 +74,7 @@ treesitter.load = function(aeris)
     ["@markup.list.checked"]   = { fg = aeris.green },
     ["@markup.list.unchecked"] = { fg = aeris.fg_muted },
 
-    -- Diff (git-подсветка в treesitter)
+    -- Diff (git highlighting in treesitter)
     ["@diff.plus"]             = { fg = aeris.green },
     ["@diff.minus"]            = { fg = aeris.red },
     ["@diff.delta"]            = { fg = aeris.peach },

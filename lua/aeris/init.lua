@@ -1,9 +1,9 @@
 local M = {}
 
 local defaults = {
-  -- Прозрачный фон для Normal и боковых панелей (терминальный фон просвечивает).
+  -- Transparent background for Normal and side panels (the terminal background shows through).
   transparent = false,
-  -- Переопределения групп поверх схемы: { Comment = { italic = true }, ... }.
+  -- Group overrides applied on top of the theme: { Comment = { italic = true }, ... }.
   overrides = {},
 }
 
@@ -20,7 +20,7 @@ function M.load()
   vim.o.background = "dark"
   vim.o.termguicolors = true
   vim.cmd("highlight clear")
-  -- :highlight clear удаляет g:colors_name, поэтому ставим его после очистки.
+  -- :highlight clear removes g:colors_name, so set it after the clear.
   vim.g.colors_name = "aeris"
 
   if vim.fn.exists("syntax_on") == 1 then

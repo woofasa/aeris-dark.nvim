@@ -6,7 +6,7 @@ syntax.load = function(aeris)
     SpecialComment = { fg = aeris.blue },
     Todo           = { fg = aeris.orange, bold = true },
 
-    -- Ключевые слова: pink. Препроцессор/импорты: blue, чтобы не сливались.
+    -- Keywords: pink. Preprocessor/imports: blue, so they don't blend together.
     Keyword        = { fg = aeris.pink },
     Conditional    = { fg = aeris.pink },
     Repeat         = { fg = aeris.pink },
@@ -28,7 +28,7 @@ syntax.load = function(aeris)
 
     Identifier     = { fg = aeris.fg },
 
-    -- Литералы: peach. Предупреждения используют отдельный orange.
+    -- Literals: peach. Warnings use the separate orange.
     String         = { fg = aeris.peach },
     Character      = { fg = aeris.peach },
     Number         = { fg = aeris.peach },

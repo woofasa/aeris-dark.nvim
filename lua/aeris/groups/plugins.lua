@@ -1,6 +1,6 @@
 local plugins = {}
 
--- Имена групп проверены по исходникам установленных плагинов.
+-- Group names verified against the source of the installed plugins.
 plugins.load = function(aeris)
   return {
     -- gitsigns

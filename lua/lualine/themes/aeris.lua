@@ -1,4 +1,4 @@
--- Тема для lualine: require("lualine").setup({ options = { theme = "aeris" } })
+-- lualine theme: require("lualine").setup({ options = { theme = "aeris" } })
 local p = require("aeris.palette")
 
 local function mode(a_bg)

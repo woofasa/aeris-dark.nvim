@@ -2,7 +2,7 @@ local editor = {}
 
 editor.load = function(aeris)
   return {
-    -- Основной текст и фон
+    -- Main text and background
     Normal        = { fg = aeris.fg, bg = aeris.bg },
     NormalNC      = { fg = aeris.fg, bg = aeris.bg_subtle },
     NormalFloat   = { fg = aeris.fg, bg = aeris.bg_overlay },
@@ -12,7 +12,7 @@ editor.load = function(aeris)
     FloatShadowThrough = { bg = aeris.bg, blend = 100 },
     Terminal      = { fg = aeris.fg, bg = aeris.bg },
 
-    -- Курсор и выделение
+    -- Cursor and selection
     Cursor        = { fg = aeris.bg, bg = aeris.fg },
     CursorIM      = { fg = aeris.bg, bg = aeris.fg },
     CursorLine    = { bg = aeris.bg_raised },
@@ -23,34 +23,34 @@ editor.load = function(aeris)
     Visual        = { bg = aeris.bg_active },
     VisualNOS     = { bg = aeris.bg_active },
 
-    -- Номера строк и колонки
+    -- Line and column numbers
     LineNr        = { fg = aeris.fg_muted },
     SignColumn    = { fg = aeris.fg_subtle, bg = aeris.bg },
     FoldColumn    = { fg = aeris.fg_subtle, bg = aeris.bg },
     ColorColumn   = { bg = aeris.bg_raised },
 
-    -- Разделители
+    -- Separators
     VertSplit     = { fg = aeris.fg_subtle },
     WinSeparator  = { fg = aeris.fg_subtle },
     EndOfBuffer   = { fg = aeris.bg },
-    -- Декоративные символы: допустимо низкий контраст
+    -- Decorative characters: low contrast is acceptable
     NonText       = { fg = aeris.fg_ghost },
     SpecialKey    = { fg = aeris.fg_ghost },
     Whitespace    = { fg = aeris.fg_ghost },
 
-    -- Поиск
+    -- Search
     Search        = { fg = aeris.bg, bg = aeris.aqua },
     IncSearch     = { fg = aeris.bg, bg = aeris.pink },
     CurSearch     = { fg = aeris.bg, bg = aeris.aqua },
     Substitute    = { fg = aeris.bg, bg = aeris.peach },
 
-    -- Popup автодополнения
+    -- Completion popup menu
     Pmenu         = { fg = aeris.fg, bg = aeris.bg_overlay },
     PmenuSel      = { fg = aeris.bg, bg = aeris.aqua },
     PmenuSbar     = { bg = aeris.bg_overlay },
     PmenuThumb    = { bg = aeris.fg_subtle },
 
-    -- Строка статуса, вкладки, winbar
+    -- Status line, tabs, winbar
     StatusLine    = { fg = aeris.fg, bg = aeris.bg_subtle },
     StatusLineNC  = { fg = aeris.fg_muted, bg = aeris.bg_subtle },
     TabLine       = { fg = aeris.fg_muted, bg = aeris.bg_subtle },
@@ -59,10 +59,10 @@ editor.load = function(aeris)
     WinBar        = { fg = aeris.fg, bg = aeris.bg },
     WinBarNC      = { fg = aeris.fg_muted, bg = aeris.bg },
 
-    -- Сворачивание
+    -- Folding
     Folded        = { fg = aeris.fg_muted, bg = aeris.bg_raised },
 
-    -- Сообщения
+    -- Messages
     ErrorMsg      = { fg = aeris.red },
     WarningMsg    = { fg = aeris.orange },
     MoreMsg       = { fg = aeris.aqua },
@@ -78,7 +78,7 @@ editor.load = function(aeris)
     DiffDelete    = { fg = aeris.red, bg = aeris.bg_raised },
     DiffText      = { fg = aeris.peach, bg = aeris.bg_raised },
 
-    -- Прочее
+    -- Miscellaneous
     MatchParen    = { fg = aeris.fg, bold = true },
     Directory     = { fg = aeris.aqua },
     QuickFixLine  = { bg = aeris.bg_overlay },

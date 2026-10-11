@@ -1,6 +1,6 @@
 local M = {}
 
--- Список модулей групп. Порядок не важен: дубли — ошибка (см. M.set).
+-- List of group modules. Order does not matter: duplicates are an error (see M.set).
 local modules = {
   "aeris.groups.editor",
   "aeris.groups.syntax",
@@ -11,7 +11,7 @@ local modules = {
   "aeris.groups.plugins",
 }
 
--- Группы, у которых фон становится прозрачным при transparent = true.
+-- Groups whose background becomes transparent when transparent = true.
 local transparent_groups = {
   "Normal",
   "NormalNC",

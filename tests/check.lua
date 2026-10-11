@@ -1,5 +1,5 @@
--- Проверки схемы без UI.
--- Запуск из корня репозитория:
+-- Theme checks without UI.
+-- Run from the repository root:
 --   nvim --headless -u NONE -l tests/check.lua
 
 local root = vim.fn.fnamemodify(debug.getinfo(1, "S").source:sub(2), ":p:h:h")
@@ -41,12 +41,12 @@ end
 local aeris = require("aeris")
 local palette = require("aeris.palette")
 
--- 1. Базовая загрузка без setup()
+-- 1. Basic load without setup()
 aeris.load()
 check(vim.g.colors_name == "aeris", "colors_name установлен")
 check(vim.o.termguicolors == true, "termguicolors включён")
 
--- 2. Терминальная палитра
+-- 2. Terminal palette
 local expected_term = {
   [0] = palette.bg_subtle, [1] = palette.red, [2] = palette.green, [3] = palette.peach,
   [4] = palette.blue, [5] = palette.pink, [6] = palette.aqua, [7] = palette.fg_muted,
@@ -63,7 +63,7 @@ end
 check(term_ok, "terminal_color_0..15 соответствуют палитре")
 check(get("Terminal").fg ~= nil, "группа Terminal задана")
 
--- 3. Контраст текстовых групп к фону Normal
+-- 3. Contrast of text groups against the Normal background
 local bg = palette.bg
 local min_contrast = {
   Comment = 4.5, LineNr = 4.5,
@@ -79,12 +79,12 @@ for group, min in pairs(min_contrast) do
   end
 end
 do
-  -- Комментарий под выделением: та же проверка, но на фоне Visual
+  -- Comment on the Visual selection: same check, but against the Visual background
   local r = contrast(palette.fg_muted, palette.bg_active)
   check(r >= 3, ("Comment на Visual: контраст %.2f >= 3"):format(r))
 end
 
--- 4. Дубли групп ловятся
+-- 4. Duplicate groups are detected
 do
   local hl = require("aeris.highlights")
   package.loaded["aeris.groups.plugins"] = { load = function() return { Normal = {} } end }
@@ -93,7 +93,7 @@ do
   check(not ok and tostring(err):find("defined twice", 1, true) ~= nil, "дубль группы вызывает ошибку")
 end
 
--- 5. Валидация setup()
+-- 5. setup() validation
 check(not pcall(aeris.setup, { transparent = "yes" }), "transparent не-boolean отвергается")
 check(not pcall(aeris.setup, { overrides = "x" }), "overrides не-таблица отвергается")
 
