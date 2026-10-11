@@ -5,17 +5,20 @@ treesitter.load = function(aeris)
     -- Комментарии
     ["@comment"]               = { fg = aeris.fg_muted },
 
-    -- Ключевые слова
+    -- Ключевые слова (подгруппы @keyword.conditional/repeat/exception
+    -- наследуют @keyword через fallback Neovim)
     ["@keyword"]               = { fg = aeris.pink },
     ["@keyword.function"]      = { fg = aeris.pink },
     ["@keyword.return"]        = { fg = aeris.pink },
     ["@keyword.operator"]      = { fg = aeris.pink },
-    ["@keyword.import"]        = { fg = aeris.pink },
+    ["@keyword.import"]        = { fg = aeris.blue },
     ["@keyword.type"]          = { fg = aeris.pink },
     ["@keyword.modifier"]      = { fg = aeris.pink },
 
     -- Функции
     ["@function"]              = { fg = aeris.aqua },
+    ["@function.builtin"]      = { fg = aeris.aqua },
+    ["@function.macro"]        = { fg = aeris.blue },
     ["@function.call"]         = { fg = aeris.aqua },
     ["@function.method"]       = { fg = aeris.aqua },
     ["@function.method.call"]  = { fg = aeris.aqua },
@@ -25,11 +28,13 @@ treesitter.load = function(aeris)
     ["@type"]                  = { fg = aeris.green },
     ["@type.builtin"]          = { fg = aeris.green },
 
-    -- Переменные
+    -- Переменные и свойства
     ["@variable"]              = { fg = aeris.fg },
     ["@variable.builtin"]      = { fg = aeris.pink },
     ["@variable.parameter"]    = { fg = aeris.fg },
     ["@variable.member"]       = { fg = aeris.fg },
+    ["@property"]              = { fg = aeris.fg },
+    ["@attribute"]             = { fg = aeris.blue },
 
     -- Литералы
     ["@string"]                = { fg = aeris.peach },
@@ -54,6 +59,25 @@ treesitter.load = function(aeris)
     ["@tag"]                   = { fg = aeris.pink },
     ["@tag.attribute"]         = { fg = aeris.blue },
     ["@tag.delimiter"]         = { fg = aeris.fg_subtle },
+
+    -- Markup (markdown и т.п.)
+    ["@markup.heading"]        = { fg = aeris.pink, bold = true },
+    ["@markup.strong"]         = { bold = true },
+    ["@markup.italic"]         = { italic = true },
+    ["@markup.strikethrough"]  = { strikethrough = true },
+    ["@markup.underline"]      = { underline = true },
+    ["@markup.link"]           = { fg = aeris.aqua },
+    ["@markup.link.url"]       = { fg = aeris.blue, underline = true },
+    ["@markup.raw"]            = { fg = aeris.peach },
+    ["@markup.quote"]          = { fg = aeris.fg_muted, italic = true },
+    ["@markup.list"]           = { fg = aeris.pink },
+    ["@markup.list.checked"]   = { fg = aeris.green },
+    ["@markup.list.unchecked"] = { fg = aeris.fg_muted },
+
+    -- Diff (git-подсветка в treesitter)
+    ["@diff.plus"]             = { fg = aeris.green },
+    ["@diff.minus"]            = { fg = aeris.red },
+    ["@diff.delta"]            = { fg = aeris.peach },
   }
 end
 
